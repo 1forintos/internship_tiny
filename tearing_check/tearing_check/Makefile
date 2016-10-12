@@ -5,7 +5,7 @@ ARCHPOSTFIX=`uname -m |sed -e 's/x86_64/64/' -e 's/x86//' -e 's/i686//'`
 #TODO : the '.so' extension is required for XScreenshot build job to perform a successful cross compile on build server
 #This is ugly, the build job must be fixed and '.so' extension removed
 gnu_c: tiffloader
-	gcc tearing.c tiffloader/* -lX11 -o tearing${ARCHPOSTFIX}.so
+	gcc tearing.c tiffloader/* -lX11 -o tearing${ARCHPOSTFIX}.so -lGL -lglut
 
 #copy tiffloader sources from spcified input directory
 tiffloader:
